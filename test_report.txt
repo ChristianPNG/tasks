@@ -5,75 +5,9 @@
 PASS src/arrays.test.ts
 PASS src/objects.test.ts
 PASS src/HtmlCss.test.tsx
-  ● Console
-
-    console.error
-      Warning: validateDOMNesting(...): <ul> cannot appear as a descendant of <p>.
-          at ul
-          at p
-          at div
-          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
-          at div
-          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
-          at div
-          at App
-
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
-      at validateDOMNesting (node_modules/react-dom/cjs/react-dom.development.js:10083:7)
-      at createInstance (node_modules/react-dom/cjs/react-dom.development.js:10181:5)
-      at completeWork (node_modules/react-dom/cjs/react-dom.development.js:19464:28)
-      at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22812:16)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
-
 PASS src/functions.test.ts
 PASS src/text.test.tsx
-  ● Console
-
-    console.error
-      Warning: validateDOMNesting(...): <ul> cannot appear as a descendant of <p>.
-          at ul
-          at p
-          at div
-          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
-          at div
-          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
-          at div
-          at App
-
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
-      at validateDOMNesting (node_modules/react-dom/cjs/react-dom.development.js:10083:7)
-      at createInstance (node_modules/react-dom/cjs/react-dom.development.js:10181:5)
-      at completeWork (node_modules/react-dom/cjs/react-dom.development.js:19464:28)
-      at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22812:16)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
-
 PASS src/App.test.tsx
-  ● Console
-
-    console.error
-      Warning: validateDOMNesting(...): <ul> cannot appear as a descendant of <p>.
-          at ul
-          at p
-          at div
-          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Row.js:22:3
-          at div
-          at /home/runner/work/tasks/tasks/node_modules/react-bootstrap/cjs/Container.js:24:3
-          at div
-          at App
-
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
-      at validateDOMNesting (node_modules/react-dom/cjs/react-dom.development.js:10083:7)
-      at createInstance (node_modules/react-dom/cjs/react-dom.development.js:10181:5)
-      at completeWork (node_modules/react-dom/cjs/react-dom.development.js:19464:28)
-      at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22812:16)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
-
 ----------------|---------|----------|---------|---------|-------------------
 File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ----------------|---------|----------|---------|---------|-------------------
@@ -90,5 +24,5 @@ All files       |     100 |      100 |     100 |     100 |
 Test Suites: 6 passed, 6 total
 Tests:       33 passed, 33 total
 Snapshots:   0 total
-Time:        4.273 s
+Time:        4.231 s
 Ran all test suites.
