@@ -1,3 +1,5 @@
+import Q from "q";
+import { isQuestion } from "./functions";
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
 
@@ -187,7 +189,23 @@ export function renameQuestionById(
     targetId: number,
     newName: string
 ): Question[] {
-    return [];
+    const questionsClone: Question[] = questions.map(
+        (question: Question): Question => ({
+            ...question,
+            options: [...question.options]
+        })
+    );
+    const renameArr: Question[] = questionsClone.map(
+        (Q: Question): Question => {
+            if (Q.id === targetId) {
+                Q.name = newName;
+                return Q;
+            } else {
+                return Q;
+            }
+        }
+    );
+    return renameArr;
 }
 
 /***
