@@ -268,7 +268,28 @@ export function editOption(
     targetOptionIndex: number,
     newOption: string
 ): Question[] {
-    return [];
+    const questionsClone: Question[] = questions.map(
+        (question: Question): Question => ({
+            ...question,
+            options: [...question.options]
+        })
+    );
+    const reOptionArr: Question[] = questionsClone.map(
+        (Q: Question): Question => {
+            if (Q.id === targetId) {
+                if (targetOptionIndex === -1) {
+                    Q.options.push(newOption);
+                    return Q;
+                } else {
+                    Q.options[targetOptionIndex] = newOption;
+                    return Q;
+                }
+            } else {
+                return Q;
+            }
+        }
+    );
+    return reOptionArr;
 }
 
 /***
