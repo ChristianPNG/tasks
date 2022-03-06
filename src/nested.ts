@@ -228,7 +228,28 @@ export function changeQuestionTypeById(
     targetId: number,
     newQuestionType: QuestionType
 ): Question[] {
-    return [];
+    const questionsClone: Question[] = questions.map(
+        (question: Question): Question => ({
+            ...question,
+            options: [...question.options]
+        })
+    );
+    const retypeArr: Question[] = questionsClone.map(
+        (Q: Question): Question => {
+            if (Q.id === targetId) {
+                Q.type = newQuestionType;
+                if (newQuestionType !== "multiple_choice_question") {
+                    Q.options = [];
+                    return Q;
+                } else {
+                    return Q;
+                }
+            } else {
+                return Q;
+            }
+        }
+    );
+    return retypeArr;
 }
 
 /**
