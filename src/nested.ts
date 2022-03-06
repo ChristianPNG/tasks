@@ -2,6 +2,7 @@ import Q from "q";
 import { isQuestion } from "./functions";
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
+import { makeBlankQuestion } from "./objects";
 
 /**
  * Consumes an array of questions and returns a new array with only the questions
@@ -176,7 +177,14 @@ export function addNewQuestion(
     name: string,
     type: QuestionType
 ): Question[] {
-    return [];
+    const blankQuestion: Question = makeBlankQuestion(id, name, type);
+    const questionsClone: Question[] = questions.map(
+        (question: Question): Question => ({
+            ...question
+        })
+    );
+    questionsClone.push(blankQuestion);
+    return questionsClone;
 }
 
 /***
