@@ -2,7 +2,7 @@ import Q from "q";
 import { isQuestion } from "./functions";
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
-import { makeBlankQuestion } from "./objects";
+import { duplicateQuestion, makeBlankQuestion } from "./objects";
 
 /**
  * Consumes an array of questions and returns a new array with only the questions
@@ -180,7 +180,8 @@ export function addNewQuestion(
     const blankQuestion: Question = makeBlankQuestion(id, name, type);
     const questionsClone: Question[] = questions.map(
         (question: Question): Question => ({
-            ...question
+            ...question,
+            options: [...question.options]
         })
     );
     questionsClone.push(blankQuestion);
@@ -303,5 +304,14 @@ export function duplicateQuestionInArray(
     targetId: number,
     newId: number
 ): Question[] {
-    return [];
+    const questionsClone: Question[] = questions.map(
+        (question: Question): Question => ({
+            ...question,
+            options: [...question.options]
+        })
+    );
+    const idx: number = questionsClone.findIndex((x) => x.id === targetId);
+    const dupQuestion: Question = duplicateQuestion(newId, questionsClone[idx]);
+    questionsClone.splice(idx + 1, 0, dupQuestion);
+    return questionsClone;
 }
