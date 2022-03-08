@@ -1,4 +1,3 @@
-import Q from "q";
 import { isQuestion } from "./functions";
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
