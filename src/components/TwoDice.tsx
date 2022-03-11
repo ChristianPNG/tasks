@@ -10,7 +10,46 @@ import { Button } from "react-bootstrap";
 export function d6(): number {
     return 1 + Math.floor(Math.random() * 6);
 }
+type Message = string | null;
 
 export function TwoDice(): JSX.Element {
-    return <div>Two Dice</div>;
+    const [message, setMessage] = useState<Message>(null);
+    const [leftValue, setLeft] = useState<number>(0);
+    const [rightValue, setRight] = useState<number>(1);
+    function SnakeEyesL(): void {
+        const num: number = d6();
+        setLeft(num);
+        if (num === 1 && rightValue === 1) {
+            setMessage("Win");
+        } else if (num === rightValue) {
+            setMessage("Lose");
+        } else {
+            setMessage(null);
+        }
+    }
+    function SnakeEyesR(): void {
+        const num: number = d6();
+        setRight(num);
+        if (num === 1 && leftValue === 1) {
+            setMessage("Lose");
+        } else if (leftValue === num) {
+            setMessage("Win");
+        } else {
+            setMessage(null);
+        }
+    }
+    return (
+        <div>
+            <span data-testid="left-die">
+                <Button onClick={SnakeEyesL}>Roll Left</Button>
+                {leftValue}
+            </span>
+            <span data-testid="right-die">
+                <Button onClick={SnakeEyesR}>Roll Right</Button>
+                {rightValue}
+            </span>
+            <br></br>
+            {message}
+        </div>
+    );
 }
