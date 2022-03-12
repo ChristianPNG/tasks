@@ -20,9 +20,9 @@ export function TwoDice(): JSX.Element {
         const num: number = d6();
         setLeft(num);
         if (num === 1 && rightValue === 1) {
-            setMessage("Win");
-        } else if (num === rightValue) {
             setMessage("Lose");
+        } else if (rightValue === num) {
+            setMessage("Win");
         } else {
             setMessage(null);
         }
