@@ -19,13 +19,6 @@ export function TwoDice(): JSX.Element {
     function SnakeEyesL(): void {
         const num: number = d6();
         setLeft(num);
-        if (num === 1 && rightValue === 1) {
-            setMessage("Lose");
-        } else if (rightValue === num) {
-            setMessage("Win");
-        } else {
-            setMessage(null);
-        }
     }
     function SnakeEyesR(): void {
         const num: number = d6();
