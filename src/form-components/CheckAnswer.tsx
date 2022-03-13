@@ -26,12 +26,7 @@ export function CheckAnswer({
             </div>
             <Form.Group controlId="checkAnswer">
                 <Form.Label>Short Question Response:</Form.Label>
-                <Form.Control
-                    // as="textarea"
-                    // rows={3}
-                    value={input}
-                    onChange={updateInput}
-                />
+                <Form.Control value={input} onChange={updateInput} />
             </Form.Group>
         </div>
     );
