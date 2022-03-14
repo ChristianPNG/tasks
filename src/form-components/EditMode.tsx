@@ -37,6 +37,7 @@ export function EditMode(): JSX.Element {
                         <Form.Control value={name} onChange={updateName} />
                     </Form.Group>
                     <Form.Check
+                        inline
                         hidden={!edit}
                         label={hideName("student")}
                         type="checkbox"
