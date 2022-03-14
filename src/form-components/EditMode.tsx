@@ -14,6 +14,13 @@ export function EditMode(): JSX.Element {
     function updateStudent(event: React.ChangeEvent<HTMLInputElement>) {
         setStudent(event.target.checked);
     }
+    function hideName(x: string): string {
+        if (!edit) {
+            return "";
+        } else {
+            return x;
+        }
+    }
     return (
         <div>
             <div>
@@ -29,14 +36,11 @@ export function EditMode(): JSX.Element {
                         <Form.Label> Name?</Form.Label>
                         <Form.Control value={name} onChange={updateName} />
                     </Form.Group>
-                    {/* <Form.Group hidden={!edit}>
-                        <Form.Label>Student?</Form.Label>
-                    </Form.Group> */}
                     <Form.Check
                         hidden={!edit}
+                        label={hideName("student")}
                         type="checkbox"
                         id="Student"
-                        label="student"
                         checked={student}
                         onChange={updateStudent}
                     />
