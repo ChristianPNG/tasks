@@ -1,6 +1,6 @@
 import { isVisible } from "@testing-library/user-event/dist/utils";
 import React, { useState } from "react";
-import { Button, Form, FormControl, FormGroup } from "react-bootstrap";
+import { Button, Form, FormCheck, FormControl, FormGroup } from "react-bootstrap";
 
 export function Quiz(): JSX.Element {
     const [QuestionCount, setQuestionCount] = useState<number>(0);
@@ -23,6 +23,16 @@ export function Quiz(): JSX.Element {
                 <br></br>
                 <h3>Question 1</h3>
                 <h4> Points: 1, Type: </h4>
+                <br></br>
+                How many sides does a square have?
+                <br></br>
+                <FormCheck 
+                inline
+                type = "radio"
+                label = "2"
+                
+                />
+
             </div>
         </FormGroup>
     );

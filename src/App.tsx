@@ -14,6 +14,7 @@ function App(): JSX.Element {
             <hr></hr>
             <ShowHideTasks></ShowHideTasks>
             <hr></hr>
+            <Question></Question>
         </div>
     );
 }
